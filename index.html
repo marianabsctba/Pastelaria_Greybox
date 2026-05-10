@@ -4,50 +4,1509 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pastelaria Graybox PTES - Be Safe.Inc</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800;900&family=Fira+Code:wght@400;500;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#2b1206;--bg2:#6f2d0c;--paper:#fff4d6;--paper2:#ffe3a3;--ink:#2b1206;--muted:#765337;--hot:#ff9f1c;--gold:#ffd166;--ok:#18864b;--bad:#c1121f;--blue:#0077b6}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:white;background:radial-gradient(circle at 10% 10%,rgba(255,209,102,.35),transparent 25%),radial-gradient(circle at 90% 5%,rgba(255,159,28,.32),transparent 28%),linear-gradient(135deg,var(--bg),var(--bg2),#170903);min-height:100vh}.wrap{max-width:1180px;margin:0 auto;padding:22px}.card{background:linear-gradient(180deg,var(--paper),var(--paper2));color:var(--ink);border:4px solid rgba(80,30,4,.28);border-radius:24px;padding:22px;margin:18px 0;box-shadow:0 20px 50px rgba(0,0,0,.25)}h1{font-size:clamp(38px,7vw,82px);line-height:.9;margin:0 0 18px;text-shadow:0 5px 0 rgba(0,0,0,.22)}h2{font-size:34px;margin:0 0 12px;color:#6b2f12}h3{margin:0 0 10px;color:#6b2f12}p{line-height:1.55;color:var(--muted);font-size:17px}.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center}.badge{display:inline-block;background:rgba(0,0,0,.25);border:2px solid rgba(255,255,255,.28);padding:10px 14px;border-radius:999px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;font-size:12px;margin-bottom:16px}label{font-weight:bold;color:#6b2f12;text-transform:uppercase;font-size:12px;letter-spacing:.08em}input{width:100%;padding:14px;border-radius:14px;border:2px solid rgba(80,30,4,.28);font-size:16px;margin-top:8px}button{border:0;border-radius:14px;padding:13px 16px;font-weight:bold;cursor:pointer;font-size:15px;margin:3px}.primary{background:linear-gradient(135deg,#ffd166,#ff9f1c);color:#2b1206;box-shadow:0 6px 0 rgba(80,30,4,.25)}.secondary{background:#fffaf0;color:#6b2f12;border:2px solid rgba(80,30,4,.2)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.asset{background:rgba(255,255,255,.55);border:2px solid rgba(80,30,4,.14);border-radius:16px;padding:14px}.asset b{display:block;margin-bottom:8px;color:#6b2f12}.asset code{display:inline-block;background:#ffd166;color:#2b1206;border-radius:8px;padding:5px 7px;margin:3px;font-size:12px}.hidden{display:none!important}.top{position:sticky;top:0;z-index:10;background:rgba(43,18,6,.94);border-bottom:2px solid rgba(255,209,102,.25)}.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}.pill{display:inline-block;background:#fff4d6;color:#6b2f12;border-radius:999px;padding:8px 12px;margin:4px;font-weight:bold}.layout{display:grid;grid-template-columns:300px 1fr;gap:18px;align-items:start}.sidebar{position:sticky;top:86px}.phaseItem{background:rgba(255,255,255,.55);border:2px solid rgba(80,30,4,.14);border-radius:14px;padding:12px;margin:8px 0;color:#6b2f12}.phaseItem.active{background:#ffd166;border-color:#ff9f1c}.phaseItem.done{background:#d8ffd8;border-color:#18864b}.choice{display:block;width:100%;text-align:left;margin:10px 0;background:#fffdf4;border:2px solid rgba(80,30,4,.22);border-radius:14px;padding:15px;min-height:82px;color:#2b1206;line-height:1.35}.choice:hover{border-color:#ff9f1c;background:#fff2c7}.choice.correct{border-color:#18864b;background:#dcffe8}.choice.wrong{border-color:#c1121f;background:#ffe0e0}.choice:disabled{cursor:not-allowed;opacity:.95}.explain{display:none;background:#fffaf0;border-left:6px solid #ff9f1c;border-radius:12px;padding:14px;margin-top:14px;color:#2b1206}.terminal{height:360px;overflow:auto;background:#050505;color:#d9fff0;border-radius:18px;padding:14px;font-family:Consolas,monospace;font-size:14px;border:4px solid #2b1206}.line{margin:5px 0;white-space:pre-wrap}.prompt{color:#ffd166}.ok{color:#78f5a7}.err{color:#ff7a8d}.info{color:#67e8f9}.muted{color:#b7b7b7}.cmdInputRow{display:flex;gap:8px;margin-top:10px}.cmdInputRow input{font-family:Consolas,monospace;margin:0}.cmdBox{background:#fffaf0;border:2px solid rgba(80,30,4,.14);border-radius:16px;padding:12px;margin-top:12px;color:#2b1206}.cmdStep{font-family:Consolas,monospace;background:#ffe7a0;border-radius:10px;padding:10px;margin:7px 0;border:2px solid rgba(80,30,4,.12);cursor:pointer}.cmdStep.done{border-color:#18864b;background:#dcffe8;text-decoration:line-through}.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:20px;z-index:99}.modal .card{max-width:760px;width:100%}canvas{max-width:100%;background:white;border-radius:18px;border:3px solid rgba(80,30,4,.25)}@media(max-width:900px){.hero,.layout,.grid{grid-template-columns:1fr}.sidebar{position:static}.cmdInputRow{flex-direction:column}}
+/* ════════════════════════════════════════════
+   PASTELARIA GRAYBOX — THEME VARIABLES
+════════════════════════════════════════════ */
+:root {
+  --bg:       #1c0900;
+  --bg2:      #3a1108;
+  --oil:      #4d1a06;
+  --paper:    #fff8e1;
+  --paper2:   #ffe9a0;
+  --paper3:   #ffdd7a;
+  --ink:      #2b1206;
+  --muted:    #7a4f2e;
+  --hot:      #ff8c00;
+  --gold:     #ffd000;
+  --glow:     #ffb300;
+  --ok:       #1a9451;
+  --bad:      #c8102e;
+  --blue:     #0077b6;
+  --crispy:   #d4580a;
+  --radius:   22px;
+  --shadow:   0 24px 64px rgba(0,0,0,.45);
+}
+
+/* ════════════════════════════════════════════
+   RESET & BASE
+════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36'%3E%3Ctext y='28' font-size='28'%3E🥟%3C/text%3E%3C/svg%3E") 18 18, auto;
+}
+
+/* ════════════════════════════════════════════
+   ANIMATED BACKGROUND
+════════════════════════════════════════════ */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* heat shimmer overlay */
+.heat-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: 
+    radial-gradient(ellipse 50% 60% at 20% 20%, rgba(255,140,0,.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 80% 80%, rgba(212,88,10,.10) 0%, transparent 70%),
+    radial-gradient(ellipse 80% 40% at 50% 110%, rgba(255,160,0,.15) 0%, transparent 60%);
+  animation: heatShimmer 8s ease-in-out infinite;
+}
+@keyframes heatShimmer {
+  0%,100% { opacity: 1; }
+  50% { opacity: .6; }
+}
+
+/* noise grain */
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: .04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ════════════════════════════════════════════
+   LAYOUT
+════════════════════════════════════════════ */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  position: relative;
+  z-index: 5;
+}
+
+/* ════════════════════════════════════════════
+   CARDS
+════════════════════════════════════════════ */
+.card {
+  background: linear-gradient(160deg, var(--paper) 0%, var(--paper2) 55%, var(--paper3) 100%);
+  color: var(--ink);
+  border: 3px solid rgba(180,80,10,.22);
+  border-radius: var(--radius);
+  padding: 26px;
+  margin: 18px 0;
+  box-shadow:
+    0 2px 0 rgba(255,255,255,.7) inset,
+    0 -3px 0 rgba(0,0,0,.07) inset,
+    var(--shadow),
+    0 0 0 1px rgba(255,200,0,.08);
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s;
+}
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--hot), var(--gold), var(--hot));
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.card:hover { transform: translateY(-2px); }
+
+/* ════════════════════════════════════════════
+   TYPOGRAPHY
+════════════════════════════════════════════ */
+h1 {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 900;
+  font-size: clamp(44px, 7vw, 90px);
+  line-height: .92;
+  margin: 0 0 20px;
+  background: linear-gradient(135deg, #ffe566 0%, #ff9500 40%, #fff4b0 70%, #ffd000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 4px 0 rgba(0,0,0,.35));
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 800;
+  font-size: 30px;
+  color: var(--oil);
+  margin: 0 0 14px;
+  letter-spacing: -.3px;
+}
+
+h3 {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--oil);
+  margin: 0 0 12px;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ════════════════════════════════════════════
+   BADGE
+════════════════════════════════════════════ */
+.badge {
+  display: inline-block;
+  background: rgba(255,208,0,.15);
+  border: 2px solid rgba(255,208,0,.4);
+  color: var(--gold);
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: 11px;
+  margin-bottom: 18px;
+  box-shadow: 0 0 24px rgba(255,208,0,.18), inset 0 1px 0 rgba(255,255,255,.2);
+  animation: badgePulse 3s ease-in-out infinite;
+}
+@keyframes badgePulse {
+  0%,100% { box-shadow: 0 0 24px rgba(255,208,0,.18), inset 0 1px 0 rgba(255,255,255,.2); }
+  50% { box-shadow: 0 0 36px rgba(255,208,0,.38), inset 0 1px 0 rgba(255,255,255,.2); }
+}
+
+/* ════════════════════════════════════════════
+   HERO
+════════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 28px;
+  align-items: center;
+}
+
+/* ════════════════════════════════════════════
+   FORM ELEMENTS
+════════════════════════════════════════════ */
+label {
+  font-weight: 800;
+  color: var(--oil);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+
+input {
+  width: 100%;
+  padding: 15px 18px;
+  border-radius: 14px;
+  border: 2.5px solid rgba(100,40,10,.2);
+  font-size: 16px;
+  margin-top: 9px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  background: rgba(255,255,255,.95);
+  color: var(--ink);
+  transition: all .25s;
+  outline: none;
+}
+input:focus {
+  border-color: var(--hot);
+  box-shadow: 0 0 0 4px rgba(255,140,0,.18), 0 4px 12px rgba(0,0,0,.1);
+  transform: scale(1.01);
+}
+
+/* ════════════════════════════════════════════
+   BUTTONS
+════════════════════════════════════════════ */
+button {
+  border: none;
+  border-radius: 14px;
+  padding: 13px 22px;
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 15px;
+  margin: 4px;
+  font-family: 'Nunito', sans-serif;
+  transition: all .15s;
+  position: relative;
+  overflow: hidden;
+}
+button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0);
+  transition: background .15s;
+}
+button:hover::after { background: rgba(255,255,255,.12); }
+button:active { transform: translateY(3px) scale(.98); }
+
+.primary {
+  background: linear-gradient(135deg, #ffe044, #ff9500);
+  color: var(--ink);
+  font-weight: 900;
+  box-shadow: 0 7px 0 rgba(140,60,0,.4), 0 10px 24px rgba(255,149,0,.3);
+  text-shadow: 0 1px 0 rgba(255,255,255,.3);
+}
+.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 0 rgba(140,60,0,.4), 0 14px 32px rgba(255,149,0,.4);
+}
+
+.secondary {
+  background: rgba(255,255,255,.95);
+  color: var(--oil);
+  border: 2.5px solid rgba(100,40,10,.18);
+  box-shadow: 0 4px 0 rgba(100,40,10,.12);
+}
+.secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(100,40,10,.12);
+  border-color: var(--hot);
+}
+
+/* ════════════════════════════════════════════
+   ASSETS GRID
+════════════════════════════════════════════ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+}
+
+.asset {
+  background: rgba(255,255,255,.65);
+  border: 2px solid rgba(100,40,10,.1);
+  border-radius: 16px;
+  padding: 14px;
+  transition: all .2s;
+}
+.asset:hover {
+  transform: translateY(-4px) rotate(.5deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  border-color: var(--hot);
+}
+.asset b {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--oil);
+  font-size: 13px;
+  font-weight: 900;
+}
+.asset code {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), #ff9500);
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 4px 9px;
+  margin: 3px;
+  font-size: 11.5px;
+  font-family: 'Fira Code', monospace;
+  font-weight: 700;
+  box-shadow: 0 2px 0 rgba(140,60,0,.25);
+}
+
+/* ════════════════════════════════════════════
+   TOP BAR
+════════════════════════════════════════════ */
+.hidden { display: none !important; }
+
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(20,7,0,.97);
+  border-bottom: 2px solid rgba(255,208,0,.2);
+  backdrop-filter: blur(20px);
+}
+.top .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+.top b {
+  font-family: 'Baloo 2', cursive;
+  font-size: 20px;
+  color: var(--gold);
+  font-weight: 900;
+}
+.top small { color: rgba(255,255,255,.45); font-size: 12px; font-weight: 600; }
+
+/* ════════════════════════════════════════════
+   PILLS
+════════════════════════════════════════════ */
+.pill {
+  display: inline-block;
+  background: rgba(255,208,0,.12);
+  color: var(--gold);
+  border: 1.5px solid rgba(255,208,0,.28);
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin: 3px;
+  font-weight: 800;
+  font-size: 13px;
+  transition: all .2s;
+}
+.pill:hover { background: rgba(255,208,0,.2); }
+
+/* ════════════════════════════════════════════
+   LAYOUT — GAME
+════════════════════════════════════════════ */
+.layout {
+  display: grid;
+  grid-template-columns: 285px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.sidebar { position: sticky; top: 80px; }
+
+/* ════════════════════════════════════════════
+   PHASE LIST
+════════════════════════════════════════════ */
+.phaseItem {
+  background: rgba(255,255,255,.06);
+  border: 2px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin: 7px 0;
+  color: rgba(255,255,255,.6);
+  font-size: 13px;
+  font-weight: 700;
+  transition: all .25s;
+}
+.phaseItem b { display: block; font-size: 13.5px; margin-bottom: 3px; }
+.phaseItem small { opacity: .7; }
+
+.phaseItem.active {
+  background: linear-gradient(135deg, rgba(255,208,0,.22), rgba(255,140,0,.15));
+  border-color: var(--gold);
+  color: var(--gold);
+  box-shadow: 0 0 20px rgba(255,208,0,.12), inset 0 1px 0 rgba(255,255,255,.15);
+  transform: translateX(4px);
+}
+.phaseItem.done {
+  background: rgba(26,148,81,.12);
+  border-color: rgba(26,148,81,.35);
+  color: #6effa0;
+}
+.phaseItem.done b::before { content: '✓ '; }
+
+/* ════════════════════════════════════════════
+   CHOICES
+════════════════════════════════════════════ */
+.choice {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 10px 0;
+  background: rgba(255,253,240,.92);
+  border: 2.5px solid rgba(100,40,10,.14);
+  border-radius: 16px;
+  padding: 16px 20px;
+  min-height: 72px;
+  color: var(--ink);
+  line-height: 1.45;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 3px 0 rgba(100,40,10,.1);
+  transition: all .2s;
+}
+.choice:hover:not(:disabled) {
+  border-color: var(--hot);
+  background: #fff2c0;
+  transform: translateX(6px);
+  box-shadow: 0 3px 0 rgba(140,60,0,.2), -4px 0 0 var(--hot);
+}
+.choice.correct {
+  border-color: #1a9451;
+  background: linear-gradient(135deg, #d4ffe6, #b8ffd6);
+  box-shadow: 0 3px 0 rgba(26,148,81,.35);
+  animation: correctPop .4s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes correctPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02) translateX(4px); }
+  100% { transform: scale(1); }
+}
+.choice.wrong {
+  border-color: var(--bad);
+  background: linear-gradient(135deg, #ffe0e0, #ffc8c8);
+  box-shadow: 0 3px 0 rgba(200,16,46,.25);
+  animation: wrongShake .4s ease;
+}
+@keyframes wrongShake {
+  0%,100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+.choice:disabled { cursor: not-allowed; opacity: .92; }
+
+/* ════════════════════════════════════════════
+   EXPLAIN BOX
+════════════════════════════════════════════ */
+.explain {
+  display: none;
+  background: linear-gradient(135deg, #fffbee, #fff4cc);
+  border-left: 6px solid var(--hot);
+  border-radius: 0 16px 16px 0;
+  padding: 16px 20px;
+  margin-top: 14px;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 4px 0 0 var(--hot) inset;
+  animation: explainSlide .3s ease;
+}
+@keyframes explainSlide {
+  from { opacity:0; transform: translateY(-10px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+
+/* ════════════════════════════════════════════
+   TERMINAL
+════════════════════════════════════════════ */
+.terminal {
+  height: 370px;
+  overflow: auto;
+  background: #020202;
+  color: #d4ffe8;
+  border-radius: 18px;
+  padding: 20px 16px 16px;
+  font-family: 'Fira Code', monospace;
+  font-size: 13.5px;
+  border: 3px solid rgba(255,208,0,.12);
+  box-shadow:
+    inset 0 0 60px rgba(0,0,0,.6),
+    inset 0 0 20px rgba(0,180,80,.03),
+    0 0 30px rgba(0,0,0,.5);
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,208,0,.3) transparent;
+}
+/* terminal dots */
+.terminal::before {
+  content: '';
+  position: sticky;
+  top: -20px;
+  display: block;
+  height: 28px;
+  background: rgba(255,255,255,.04);
+  margin: -20px -16px 14px;
+  padding: 8px 14px;
+  border-radius: 15px 15px 0 0;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,.05);
+}
+.terminal::after {
+  content: '● ● ●';
+  position: absolute;
+  top: 8px; left: 14px;
+  color: rgba(255,255,255,.18);
+  font-size: 10px;
+  letter-spacing: 5px;
+  pointer-events: none;
+}
+.terminal::-webkit-scrollbar { width: 6px; }
+.terminal::-webkit-scrollbar-thumb { background: rgba(255,208,0,.25); border-radius: 3px; }
+
+.line { margin: 5px 0; white-space: pre-wrap; animation: lineIn .18s ease; }
+@keyframes lineIn { from { opacity:0; } to { opacity:1; } }
+.prompt { color: #ffd000; font-weight: 700; }
+.ok     { color: #5effa0; }
+.err    { color: #ff6b82; }
+.info   { color: #5ee8ff; }
+.muted  { color: #888; }
+
+/* ════════════════════════════════════════════
+   CMD INPUT ROW
+════════════════════════════════════════════ */
+.cmdInputRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.cmdInputRow input {
+  font-family: 'Fira Code', monospace;
+  margin: 0;
+  font-size: 14px;
+  background: #100600;
+  color: var(--gold);
+  border-color: rgba(255,208,0,.18);
+}
+.cmdInputRow input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(255,208,0,.12);
+  transform: none;
+}
+.cmdInputRow input::placeholder { color: rgba(255,208,0,.3); }
+
+/* ════════════════════════════════════════════
+   CMD BOX
+════════════════════════════════════════════ */
+.cmdBox {
+  background: rgba(255,250,235,.93);
+  border: 2px solid rgba(100,40,10,.1);
+  border-radius: 18px;
+  padding: 14px 16px;
+  margin-top: 14px;
+  color: var(--ink);
+}
+.cmdBox b  { font-weight: 900; font-size: 14px; display: block; margin-bottom: 4px; }
+.cmdBox small { color: var(--muted); font-size: 12px; font-weight: 700; }
+
+.cmdStep {
+  font-family: 'Fira Code', monospace;
+  background: linear-gradient(135deg, #fff9d0, #ffe590);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 7px 0;
+  border: 2px solid rgba(100,40,10,.1);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 2px 0 rgba(100,40,10,.12);
+  transition: all .18s;
+}
+.cmdStep:hover {
+  border-color: var(--hot);
+  transform: translateX(5px);
+  box-shadow: -4px 2px 0 var(--hot), 0 2px 0 rgba(100,40,10,.12);
+}
+.cmdStep.done {
+  background: linear-gradient(135deg, #d4ffe6, #b8ffd0);
+  border-color: #1a9451;
+  text-decoration: line-through;
+  opacity: .65;
+  cursor: default;
+  transform: none;
+}
+
+/* ════════════════════════════════════════════
+   MODAL
+════════════════════════════════════════════ */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.78);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 200;
+  backdrop-filter: blur(12px);
+}
+.modal .card {
+  max-width: 780px;
+  width: 100%;
+  animation: modalPop .35s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes modalPop {
+  from { opacity:0; transform: scale(.8) translateY(20px); }
+  to   { opacity:1; transform: scale(1) translateY(0); }
+}
+
+/* ════════════════════════════════════════════
+   CERTIFICATE CANVAS
+════════════════════════════════════════════ */
+canvas {
+  max-width: 100%;
+  border-radius: 20px;
+  border: 4px solid rgba(100,40,10,.2);
+  box-shadow: 0 24px 72px rgba(0,0,0,.4);
+}
+
+/* ════════════════════════════════════════════
+   FLOATING PASTEL EMOJIS — CSS layer
+════════════════════════════════════════════ */
+.pastel-float {
+  position: fixed;
+  pointer-events: none;
+  z-index: 3;
+  font-size: 38px;
+  animation: floatUp linear infinite;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,.35));
+  will-change: transform;
+}
+@keyframes floatUp {
+  0%   { transform: translateY(110vh) rotate(0deg)   scale(.7); opacity: 0; }
+  5%   { opacity: .75; }
+  95%  { opacity: .65; }
+  100% { transform: translateY(-15vh)  rotate(540deg) scale(1.1); opacity: 0; }
+}
+
+/* ════════════════════════════════════════════
+   MUSIC & CLICK FX
+════════════════════════════════════════════ */
+#music-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffd000, #ff8c00);
+  border: none;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 28px rgba(255,140,0,.45);
+  cursor: pointer;
+  transition: all .2s;
+  animation: musicBtnBounce 2s ease-in-out infinite;
+  margin: 0;
+  padding: 0;
+}
+#music-btn:hover { transform: scale(1.15) rotate(12deg); }
+@keyframes musicBtnBounce {
+  0%,100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.06) rotate(6deg); }
+}
+
+.click-burst {
+  position: fixed;
+  pointer-events: none;
+  z-index: 300;
+  font-size: 30px;
+  animation: burstAnim .65s ease forwards;
+}
+@keyframes burstAnim {
+  0%   { opacity:1; transform: scale(.4) translateY(0); }
+  100% { opacity:0; transform: scale(1.8) translateY(-50px); }
+}
+
+/* score flash */
+@keyframes scoreFlash {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.5); color: #fff; }
+  100% { transform: scale(1); }
+}
+.score-flash { animation: scoreFlash .4s ease; }
+
+/* steam puffs on exec */
+.steam {
+  position: fixed;
+  pointer-events: none;
+  z-index: 300;
+  font-size: 22px;
+  animation: steamAnim .8s ease forwards;
+}
+@keyframes steamAnim {
+  0%   { opacity:.9; transform: translateY(0) scale(.6); }
+  100% { opacity:0;  transform: translateY(-70px) scale(1.4); }
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .hero, .layout, .grid { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .cmdInputRow { flex-direction: column; }
+  h1 { font-size: 52px; }
+}
+
+/* scrollbar global */
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: rgba(0,0,0,.2); }
+::-webkit-scrollbar-thumb { background: rgba(255,208,0,.3); border-radius: 4px; }
 </style>
 </head>
 <body>
-<section id="start" class="wrap hero"><div><span class="badge">Be Safe.Inc • Graybox • PTES</span><h1>O Pentest do Pastel de Firewall</h1><p style="color:#fff4d6;font-size:19px">Um desafio divertido, técnico e com humor ácido onde a pessoa lê o caso, segue PTES e executa comandos reais simulados em uma CLI estilo Kali Linux.</p><div class="card"><h2>Entrada obrigatória</h2><label>Nome para certificado</label><input id="studentName" placeholder="Digite seu nome completo"><br><br><button id="startBtn" class="primary">Começar pentest autorizado</button><button id="rulesBtn" class="secondary">Regras de engajamento</button></div></div><div class="card"><h2>Cardápio de ativos</h2><div class="grid"><div class="asset"><b>Rede</b><code>10.77.10.0/24</code><code>VPN graybox</code><code>sem DoS</code></div><div class="asset"><b>Web</b><code>portal.besafe.inc</code><code>Apache</code><code>SSO</code></div><div class="asset"><b>API</b><code>api.besafe.inc/v1</code><code>JWT</code><code>Swagger parcial</code></div><div class="asset"><b>Mobile</b><code>BeSafe-Field.apk</code><code>Android</code><code>staging</code></div><div class="asset"><b>Credencial</b><code>auditor.ptes</code><code>contractor</code><code>MFA sandbox</code></div><div class="asset"><b>Limites</b><code>sem brute force</code><code>sem persistência</code><code>sem dados reais</code></div></div></div></section>
-<section id="game" class="hidden"><div class="top"><div class="wrap"><div><b>Pastelaria Graybox PTES</b><br><small>Be Safe.Inc • técnica com óleo quente •</small></div><div><span class="pill">Aluno: <span id="studentOut"></span></span><span class="pill">Fase: <span id="phaseOut"></span>/7</span><span class="pill">Score: <span id="scoreOut">0</span></span><span class="pill">Tempo: <span id="timeOut">60:00</span></span></div></div></div><div class="wrap layout"><aside class="card sidebar"><h3>Fases PTES</h3><div id="phaseList"></div><p style="font-size:14px">A CLI não entrega a ordem. Você recebe o arsenal e precisa pensar como pentester, não como apertador de botão corporativo.</p></aside><main><div class="card"><h2 id="phaseTitle"></h2><p id="phaseText"></p><h3>Decisão técnica</h3><p id="questionText"></p><div id="choices"></div><div id="explain" class="explain"></div></div><div class="card"><h3>CLI Kali simulada</h3><div id="terminal" class="terminal"></div><div class="cmdInputRow"><input id="cmdInput" placeholder="Digite o comando escolhido"><button id="execBtn" class="primary">Executar</button></div><div class="cmdBox"><b>Arsenal disponível da fase</b><br><small>Comandos misturados e naturais. Errou a sequência... refaz a fase. Sem cola.</small><div id="cmdList"></div></div></div></main></div></section>
-<section id="certificate" class="wrap hidden"><div class="card"><h2>Certificado liberado</h2><canvas id="certCanvas" width="1400" height="950"></canvas><br><br><button id="downloadBtn" class="primary">Baixar certificado PNG</button><button id="reloadBtn" class="secondary">Refazer</button></div></section>
-<div id="modal" class="modal"><div class="card"><div id="modalText"></div><button id="closeModalBtn" class="primary">Entendi</button></div></div>
+
+<!-- BACKGROUND CANVAS for animated frying pastéis -->
+<canvas id="bg-canvas"></canvas>
+<div class="heat-overlay"></div>
+<div class="noise"></div>
+
+<!-- FLOATING EMOJI PASTÉIS (CSS layer) -->
+<div id="float-layer"></div>
+
+<!-- MUSIC BUTTON -->
+<button id="music-btn" title="Ligar/desligar música">🎵</button>
+
+<!-- ══════════════════════════════════════
+     SECTION: START
+══════════════════════════════════════ -->
+<section id="start" class="wrap hero">
+  <div>
+    <span class="badge">🥟 Be Safe.Inc &bull; Graybox &bull; PTES &bull; Pastelaria</span>
+    <h1>O Pentest do Pastel de Firewall</h1>
+    <p style="color:rgba(255,244,214,.9);font-size:18px;font-weight:700;margin-bottom:22px">
+      Um desafio divertido, técnico e com humor ácido onde a pessoa lê o caso, segue PTES e executa comandos reais simulados em uma CLI estilo Kali Linux.
+    </p>
+    <div class="card">
+      <h2>🔐 Entrada obrigatória</h2>
+      <label>Nome para certificado</label>
+      <input id="studentName" placeholder="Digite seu nome completo">
+      <br><br>
+      <button id="startBtn" class="primary">🚀 Começar pentest autorizado</button>
+      <button id="rulesBtn" class="secondary">📋 Regras de engajamento</button>
+    </div>
+  </div>
+  <div class="card">
+    <h2>🍽️ Cardápio de ativos</h2>
+    <div class="grid">
+      <div class="asset"><b>🌐 Rede</b><code>10.77.10.0/24</code><code>VPN graybox</code><code>sem DoS</code></div>
+      <div class="asset"><b>💻 Web</b><code>portal.besafe.inc</code><code>Apache</code><code>SSO</code></div>
+      <div class="asset"><b>⚙️ API</b><code>api.besafe.inc/v1</code><code>JWT</code><code>Swagger parcial</code></div>
+      <div class="asset"><b>📱 Mobile</b><code>BeSafe-Field.apk</code><code>Android</code><code>staging</code></div>
+      <div class="asset"><b>🔑 Credencial</b><code>auditor.ptes</code><code>contractor</code><code>MFA sandbox</code></div>
+      <div class="asset"><b>🚫 Limites</b><code>sem brute force</code><code>sem persistência</code><code>sem dados reais</code></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION: GAME
+══════════════════════════════════════ -->
+<section id="game" class="hidden">
+  <div class="top">
+    <div class="wrap">
+      <div>
+        <b>🥟 Pastelaria Graybox PTES</b><br>
+        <small>Be Safe.Inc &bull; pentest com óleo quente</small>
+      </div>
+      <div>
+        <span class="pill">👤 <span id="studentOut"></span></span>
+        <span class="pill">📍 Fase <span id="phaseOut"></span>/7</span>
+        <span class="pill">⭐ <span id="scoreOut">0</span> pts</span>
+        <span class="pill">⏱️ <span id="timeOut">60:00</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap layout">
+    <aside class="card sidebar">
+      <h3>🗺️ Fases PTES</h3>
+      <div id="phaseList"></div>
+      <p style="font-size:13px;margin-top:14px">
+        A CLI não entrega a ordem. Você recebe o arsenal e precisa pensar como pentester, não como apertador de botão corporativo.
+      </p>
+    </aside>
+
+    <main>
+      <div class="card">
+        <h2 id="phaseTitle"></h2>
+        <p id="phaseText"></p>
+        <br>
+        <h3>🎯 Decisão técnica</h3>
+        <p id="questionText" style="margin-bottom:12px"></p>
+        <div id="choices"></div>
+        <div id="explain" class="explain"></div>
+      </div>
+
+      <div class="card">
+        <h3>💻 CLI Kali simulada</h3>
+        <div id="terminal" class="terminal"></div>
+        <div class="cmdInputRow">
+          <input id="cmdInput" placeholder="$ comando...">
+          <button id="execBtn" class="primary">▶ Executar</button>
+        </div>
+        <div class="cmdBox">
+          <b>🧰 Arsenal disponível da fase</b>
+          <small>Comandos misturados de propósito. Errou a sequência... refaz a fase. Sem cola.</small>
+          <div id="cmdList"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION: CERTIFICATE
+══════════════════════════════════════ -->
+<section id="certificate" class="wrap hidden">
+  <div class="card">
+    <h2>🏆 Certificado liberado!</h2>
+    <canvas id="certCanvas" width="1400" height="950"></canvas>
+    <br><br>
+    <button id="downloadBtn" class="primary">⬇️ Baixar certificado PNG</button>
+    <button id="reloadBtn" class="secondary">🔄 Refazer</button>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     MODAL
+══════════════════════════════════════ -->
+<div id="modal" class="modal">
+  <div class="card">
+    <div id="modalText"></div>
+    <button id="closeModalBtn" class="primary">✅ Entendi, vou fritar melhor</button>
+  </div>
+</div>
+
 <script>
+/* ══════════════════════════════════════════════════════
+   🎵 WEB AUDIO — pastelaria jingle + SFX
+══════════════════════════════════════════════════════ */
+var AC = null, musicOn = false;
+
+function getAC() {
+  if (!AC) AC = new (window.AudioContext || window.webkitAudioContext)();
+  if (AC.state === 'suspended') AC.resume();
+  return AC;
+}
+
+/* ── tiny tone helper ── */
+function tone(freq, dur, type, vol, delay, fadeIn) {
+  try {
+    var ac = getAC();
+    var osc = ac.createOscillator();
+    var g   = ac.createGain();
+    osc.connect(g); g.connect(ac.destination);
+    osc.type = type || 'sine';
+    osc.frequency.value = freq;
+    var t = ac.currentTime + (delay || 0);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.linearRampToValueAtTime(vol || .08, t + (fadeIn || .01));
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    osc.start(t); osc.stop(t + dur + .05);
+  } catch(e) {}
+}
+
+/* ── SFX ── */
+function sfxKey()     { tone(350+Math.random()*180, .04, 'square', .025); }
+function sfxClick()   { tone(700, .07, 'square', .05); tone(900, .05, 'square', .03, .04); }
+function sfxCorrect() { [523,659,784,1047].forEach(function(f,i){ tone(f,.18,'sine',.09,i*.1); }); }
+function sfxWrong()   { tone(180,.35,'sawtooth',.1); tone(140,.4,'sawtooth',.08,.15); }
+function sfxExec()    { tone(440,.05,'square',.05); tone(660,.08,'square',.04,.05); tone(880,.06,'square',.03,.09); }
+function sfxPhase()   { [392,523,659,784,1047,1319].forEach(function(f,i){ tone(f,.2,'sine',.1,i*.11); }); }
+function sfxFail()    { [250,200,160,120].forEach(function(f,i){ tone(f,.22,'sawtooth',.09,i*.09); }); }
+function sfxModal()   { tone(300,.5,'square',.04); }
+
+/* ══════════════════════════════════════════════════════
+   🎵 BACKGROUND MUSIC — looping pastelaria jingle
+   Melody (main), bass & percussion on separate loops
+══════════════════════════════════════════════════════ */
+var MELODY = [
+  /* bar 1 - chipper forró-inspired */
+  [659,.18],[587,.12],[523,.12],[440,.18],[523,.12],[587,.12],[659,.36],[659,.18],[0,.09],
+  /* bar 2 */
+  [784,.18],[698,.12],[659,.12],[587,.18],[659,.12],[698,.12],[784,.36],[784,.18],[0,.09],
+  /* bar 3 - descend */
+  [1047,.18],[988,.12],[880,.12],[784,.18],[698,.18],[659,.18],[587,.18],[523,.36],[0,.09],
+  /* bar 4 - resolve */
+  [440,.18],[523,.18],[587,.12],[659,.12],[698,.18],[784,.18],[880,.36],[0,.36]
+];
+var BASS = [
+  [131,.36],[0,.09],[131,.18],[0,.09],[147,.36],[0,.09],[147,.18],[0,.09],
+  [165,.36],[0,.09],[165,.18],[0,.09],[175,.36],[0,.09],[175,.18],[0,.09],
+  [131,.36],[0,.09],[131,.18],[0,.09],[147,.36],[0,.09],[147,.18],[0,.09],
+  [131,.36],[0,.09],[131,.18],[0,.09],[131,.36],[0,.36]
+];
+
+var melodyTimer = null, bassTimer = null, drumTimer = null;
+
+function playMelodyLoop() {
+  if (!musicOn) return;
+  var ac = getAC();
+  var t = ac.currentTime + .05;
+  var total = 0;
+  MELODY.forEach(function(n) {
+    if (n[0] > 0) {
+      var o = ac.createOscillator(), g = ac.createGain();
+      o.connect(g); g.connect(ac.destination);
+      o.type = 'triangle';
+      o.frequency.value = n[0];
+      g.gain.setValueAtTime(.055, t + total);
+      g.gain.exponentialRampToValueAtTime(.0001, t + total + n[1]*.85);
+      o.start(t + total); o.stop(t + total + n[1]);
+    }
+    total += n[1];
+  });
+  melodyTimer = setTimeout(playMelodyLoop, total*1000 - 80);
+}
+function playBassLoop() {
+  if (!musicOn) return;
+  var ac = getAC();
+  var t = ac.currentTime + .05;
+  var total = 0;
+  BASS.forEach(function(n) {
+    if (n[0] > 0) {
+      var o = ac.createOscillator(), g = ac.createGain();
+      o.connect(g); g.connect(ac.destination);
+      o.type = 'sine';
+      o.frequency.value = n[0];
+      g.gain.setValueAtTime(.07, t + total);
+      g.gain.exponentialRampToValueAtTime(.0001, t + total + n[1]*.75);
+      o.start(t + total); o.stop(t + total + n[1]);
+    }
+    total += n[1];
+  });
+  bassTimer = setTimeout(playBassLoop, total*1000 - 80);
+}
+var drumBeat = 0;
+function drumTick() {
+  if (!musicOn) return;
+  var ac = getAC();
+  /* kick */
+  if (drumBeat % 8 === 0 || drumBeat % 8 === 4) {
+    try {
+      var ok = ac.createOscillator(), gk = ac.createGain();
+      ok.connect(gk); gk.connect(ac.destination);
+      ok.frequency.setValueAtTime(160, ac.currentTime);
+      ok.frequency.exponentialRampToValueAtTime(45, ac.currentTime + .18);
+      gk.gain.setValueAtTime(.14, ac.currentTime);
+      gk.gain.exponentialRampToValueAtTime(.0001, ac.currentTime + .22);
+      ok.start(); ok.stop(ac.currentTime + .25);
+    } catch(e) {}
+  }
+  /* snare */
+  if (drumBeat % 8 === 4) {
+    try {
+      var buf = ac.createBuffer(1, ac.sampleRate*.1, ac.sampleRate);
+      var d = buf.getChannelData(0);
+      for (var i=0;i<d.length;i++) d[i] = (Math.random()*2-1)*.28;
+      var s = ac.createBufferSource(), gs = ac.createGain();
+      s.buffer = buf; s.connect(gs); gs.connect(ac.destination);
+      gs.gain.setValueAtTime(.1, ac.currentTime);
+      gs.gain.exponentialRampToValueAtTime(.0001, ac.currentTime + .1);
+      s.start();
+    } catch(e) {}
+  }
+  /* hihat */
+  if (drumBeat % 2 === 0) {
+    try {
+      var hbuf = ac.createBuffer(1, ac.sampleRate*.04, ac.sampleRate);
+      var hd = hbuf.getChannelData(0);
+      for (var j=0;j<hd.length;j++) hd[j] = (Math.random()*2-1)*.12;
+      var hs = ac.createBufferSource(), hg = ac.createGain();
+      hs.buffer = hbuf; hs.connect(hg); hg.connect(ac.destination);
+      hg.gain.setValueAtTime(.06, ac.currentTime);
+      hg.gain.exponentialRampToValueAtTime(.0001, ac.currentTime + .04);
+      hs.start();
+    } catch(e) {}
+  }
+  drumBeat++;
+  drumTimer = setTimeout(drumTick, 230);
+}
+
+function startMusic() {
+  musicOn = true;
+  document.getElementById('music-btn').textContent = '🔇';
+  playMelodyLoop(); playBassLoop(); drumTick();
+}
+function stopMusic() {
+  musicOn = false;
+  clearTimeout(melodyTimer); clearTimeout(bassTimer); clearTimeout(drumTimer);
+  document.getElementById('music-btn').textContent = '🎵';
+}
+
+/* ══════════════════════════════════════════════════════
+   🥟 CANVAS BACKGROUND — flying pastéis with oil sizzle
+══════════════════════════════════════════════════════ */
+(function() {
+  var cvs = document.getElementById('bg-canvas');
+  var ctx = cvs.getContext('2d');
+  var W, H;
+  var items = [];
+  var EMOJI = ['🥟','🫔','🍡','🧆','🫓','🌮','🥐','🍢'];
+  var OIL   = ['💧','〰️'];
+  var SPARKS = ['✨','💥'];
+
+  function resize() { W = cvs.width = window.innerWidth; H = cvs.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function spawn() {
+    items.push({
+      e: EMOJI[Math.floor(Math.random()*EMOJI.length)],
+      x: Math.random() * W,
+      y: H + 50,
+      sz: 28 + Math.random()*36,
+      vy: .4 + Math.random()*1.1,
+      spin: (Math.random()-.5)*.05,
+      ang: Math.random()*Math.PI*2,
+      wobX: Math.random()*Math.PI*2,
+      wobSpd: .015 + Math.random()*.025,
+      wobAmp: 18 + Math.random()*38,
+      op: .55 + Math.random()*.35,
+      glow: Math.random() > .6
+    });
+  }
+  /* pre-seed */
+  for (var pi=0;pi<16;pi++) {
+    items.push({
+      e: EMOJI[Math.floor(Math.random()*EMOJI.length)],
+      x: Math.random()*W, y: Math.random()*H,
+      sz: 28+Math.random()*36, vy:.4+Math.random()*1.1,
+      spin:(Math.random()-.5)*.05, ang:Math.random()*Math.PI*2,
+      wobX:Math.random()*Math.PI*2, wobSpd:.015+Math.random()*.025,
+      wobAmp:18+Math.random()*38, op:.55+Math.random()*.35,
+      glow: Math.random() > .6
+    });
+  }
+  setInterval(spawn, 900);
+
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+
+    /* deep warm gradient bg */
+    var bg = ctx.createRadialGradient(W*.5,H*.5,0, W*.5,H*.5,Math.max(W,H)*.75);
+    bg.addColorStop(0, '#2a0d04');
+    bg.addColorStop(.5,'#180600');
+    bg.addColorStop(1, '#090200');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0,0,W,H);
+
+    /* subtle heat grid */
+    ctx.save();
+    ctx.strokeStyle = 'rgba(255,180,0,.025)';
+    ctx.lineWidth = 1;
+    for (var gx=0;gx<W;gx+=90) { ctx.beginPath();ctx.moveTo(gx,0);ctx.lineTo(gx,H);ctx.stroke(); }
+    for (var gy=0;gy<H;gy+=90) { ctx.beginPath();ctx.moveTo(0,gy);ctx.lineTo(W,gy);ctx.stroke(); }
+    ctx.restore();
+
+    /* oil bubble ring at bottom */
+    var oilGrad = ctx.createLinearGradient(0,H*.85,0,H);
+    oilGrad.addColorStop(0,'transparent');
+    oilGrad.addColorStop(1,'rgba(255,120,0,.08)');
+    ctx.fillStyle = oilGrad;
+    ctx.fillRect(0,H*.85,W,H*.15);
+
+    /* pastéis */
+    for (var i=items.length-1;i>=0;i--) {
+      var p = items[i];
+      p.y -= p.vy;
+      p.ang += p.spin;
+      p.wobX += p.wobSpd;
+      var wx = p.x + Math.sin(p.wobX)*p.wobAmp;
+      var fade = Math.min(1, (H-p.y)/120, p.y < 0 ? 0 : 1);
+
+      ctx.save();
+      ctx.globalAlpha = p.op * fade;
+      ctx.translate(wx, p.y);
+      ctx.rotate(p.ang);
+      ctx.font = p.sz + 'px serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+
+      if (p.glow) {
+        ctx.shadowColor = 'rgba(255,180,40,.55)';
+        ctx.shadowBlur = 18;
+      }
+
+      ctx.fillText(p.e, 0, 0);
+      ctx.restore();
+
+      if (p.y < -80) items.splice(i, 1);
+    }
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ══════════════════════════════════════════════════════
+   ✨ CLICK FX — emoji burst on interactive clicks
+══════════════════════════════════════════════════════ */
+var BURSTS = ['✨','💥','🔥','⚡','🥟','🌟','💫','🎯','🫔'];
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('button,input,.choice,.cmdStep')) return;
+  var el = document.createElement('div');
+  el.className = 'click-burst';
+  el.textContent = BURSTS[Math.floor(Math.random()*BURSTS.length)];
+  el.style.left = (e.clientX - 16) + 'px';
+  el.style.top  = (e.clientY - 16) + 'px';
+  document.body.appendChild(el);
+  setTimeout(function(){ el.remove(); }, 700);
+});
+
+/* steam on exec */
+function spawnSteam(x, y) {
+  ['💨','💨','☁️'].forEach(function(e, i) {
+    var el = document.createElement('div');
+    el.className = 'steam';
+    el.textContent = e;
+    el.style.left = (x + (i-1)*20) + 'px';
+    el.style.top  = y + 'px';
+    el.style.animationDelay = (i*.08) + 's';
+    document.body.appendChild(el);
+    setTimeout(function(){ el.remove(); }, 900);
+  });
+}
+
+/* ══════════════════════════════════════════════════════
+   🎮 ORIGINAL GAME LOGIC — untouched except sfx hooks
+══════════════════════════════════════════════════════ */
 var SALT='BS-PTES-PASTEL-2026-MARIANA';
 var DEV_UNLOCK=false;
 var phases=[{"title": "1. Pré-engajamento", "text": "A Be Safe.Inc autorizou um pentest graybox. Antes de tocar nos ativos, valide escopo, regras, janela e limites. Pentest sem ROE é pastel de vento jurídico.", "question": "Qual decisão é a mais correta nesta fase?", "decoys": ["pwd", "ls -la", "ip a", "date", "cat /etc/hosts", "ip route", "ps aux | grep openvpn"], "choices": [{"text": "Validar autorização, escopo, janela, contatos, limites e critério de parada.", "exp": "Correto. Sem ROE validado, qualquer comando vira ruído operacional com cheiro de problema jurídico."}, {"text": "Checar VPN, preparar evidências e só depois validar autorização formal.", "exp": "Parece organizado, mas já toca ambiente antes de fechar autorização e limites. Ordem importa."}, {"text": "Testar login contractor, registrar acesso e revisar escopo antes da enumeração.", "exp": "Parece leve, mas credencial entregue não substitui autorização formal, contatos e janela."}, {"text": "Rodar varredura curta, medir superfície e ajustar o plano depois.", "exp": "Parece eficiente, mas scanner antes de ROE é pressa fantasiada de metodologia."}], "answerX": "cg==", "commands": [{"cmdX": "ITJZcDErNEw3JD4xKzgCYH93GEAp", "out": "ROE carregado. Escopo: 10.77.10.0/24, portal.besafe.inc, api.besafe.inc/v1 e BeSafe-Field.apk. Proibido: DoS, brute force, persistência e dados reais.", "why": "Você confirmou escopo, limites e ações proibidas antes de interagir tecnicamente com os ativos."}, {"cmdX": "MTtMYmFzIFg9YTYiLChIXFNXGUw4NTomMyc7IydEPzoaP0gkNTYmazxJVA==", "out": "b7f4e2c9d81d6a6b9c3f1d9e7b0a2c5e8f9a1d3c4b5e6f77889900aabbccdd11  authorization_letter.pdf", "why": "Você registrou integridade da autorização. Isso deixa a evidência defensável."}, {"cmdX": "LzhJOSZlfl1wJCU9ISlDUVUdREguLjxpJDgoJjZDMzFqPUgkNjwmLmxIRFlWU0MuJH0+JCxhJyVENDErMEh/ICM9ZSlbW1RXWE4obj8mIyctJ3NIJj0hNkMzJHwmIDxCQEQ=", "out": "Diretórios de evidência criados.", "why": "Você preparou a cadeia de evidências. Relatório sem organização vira gaveta de cabo velho."}]}, {"title": "2. Inteligência", "text": "Agora vem coleta segura: DNS, headers, tecnologias e documentação exposta. Scanner sem contexto é liquidificador corporativo.", "question": "Qual sequência é a mais madura para inteligência?", "decoys": ["host portal.besafe.inc", "nslookup api.besafe.inc", "curl -sk https://portal.besafe.inc/robots.txt", "curl -sk https://portal.besafe.inc/favicon.ico", "openssl s_client -connect portal.besafe.inc:443 -servername portal.besafe.inc </dev/null", "whois besafe.inc"], "choices": [{"text": "Resolver nomes, observar HTTP/TLS, mapear tecnologias e salvar documentação.", "exp": "Correto. A coleta começa com contexto, baixa agressividade e evidência reaproveitável."}, {"text": "Enumerar diretórios, revisar robots, checar TLS e comparar nomes DNS.", "exp": "Tem itens úteis, mas começa ativo demais antes de entender nomes e superfície básica."}, {"text": "Autenticar como contractor, mapear rotas internas e enriquecer headers.", "exp": "Parece direto, mas pula baseline externo e mistura contexto com sessão autenticada cedo demais."}, {"text": "Extrair URLs do APK, testar staging e usar DNS para confirmar achados.", "exp": "Mobile é relevante, mas não deve dominar a primeira coleta do escopo inteiro."}], "answerX": "cg==", "commands": [{"cmdX": "JjpKcH82O0IiNXMkKj5ZU1wcVEg+IDQsbycvIXNMID1rMUgjIDUxayVDUQ==", "out": "10.77.10.21\n10.77.10.40", "why": "Você resolveu nomes para IPs do escopo e evitou testar alvo errado."}, {"cmdX": "KidZICxlflhwKScgNT8XHR9CWV85ID5nIysyIzVIfj0rMA19NTogKSkNH0RXVUVgJTc9JC01Yn5eJDUxJl59IjwwIGwARlxBG10/LjAs", "out": "https://portal.besafe.inc [200] [Be Safe Portal] [Apache,React,Keycloak Adapter] [TLS1.3]", "why": "Você identificou status, título, tecnologias e TLS sem explorar nada."}, {"cmdX": "ISZfPHRoIEYZYTsgMTxeCB8dV10kbzAsMi8nJ31EPjdqJRx/KTY1KThF", "out": "HTTP/2 200\nserver: nginx\nx-env: staging\nx-api-version: v1.8.2", "why": "Você coletou headers úteis. x-env confirma staging e x-api-version ajuda rastreabilidade."}, {"cmdX": "ISZfPHRoIEZwKScgNT8XHR9TRkRjIzc6ICgkbDpDM3szYgIjNjIzIilfHFpBWUNtbD1pJDgoJjZDMzFqMl05biAjJCtKV0IcXF4iLw==", "out": "Swagger parcial salvo. Endpoints: /health, /users/me, /reports, /admin/export.", "why": "Você salvou documentação exposta da API para análise controlada."}]}, {"title": "3. Modelagem de ameaças", "text": "Você transforma evidências em hipótese. O alvo não é colecionar CVE como figurinha, é achar caminho de risco real.", "question": "Qual ameaça deve ser priorizada?", "decoys": ["jq . evidence/api/swagger.json", "grep -R \"admin\" evidence/", "cat notes/recon-summary.md", "tree evidence/api", "sed -n \"1,40p\" evidence/api/swagger.json", "grep -R \"tenant\" evidence/"], "choices": [{"text": "Escalação lógica entre contractor, API multi-tenant e endpoint administrativo.", "exp": "Correto. Cruza identidade, autorização e dado de negócio: o trio que costuma doer de verdade."}, {"text": "Ausência de CSP no portal, com abuso client-side em sessão autenticada.", "exp": "É relevante, mas ainda está menos conectado ao caminho graybox com maior impacto."}, {"text": "SMB legado interno, com chance futura de movimento lateral validado.", "exp": "Pode importar, mas falta vínculo com a hipótese principal e autorização para lateralidade."}, {"text": "URL de staging no APK, sugerindo segregação fraca mobile-backend.", "exp": "É uma pista forte, mas sozinha ainda não demonstra impacto direto."}], "answerX": "cg==", "commands": [{"cmdX": "ITJZcDEzOkk1LzAxai1dWx9BQUwqJjc7byQyLT0NLHQvIg19M3N2azxMRlhBFlFtKjcwMhUcYA==", "out": "/health\n/users/me\n/reports\n/admin/export", "why": "Você extraiu endpoints e destacou uma rota administrativa sensível."}, {"cmdX": "ITJZcCAtIUgxNX45KihIXh9GRFg+NX8rLjsvJjJfOTE2fUA0", "out": "Fronteiras: Internet -> Portal; Mobile -> API; API -> DB; VPN Contractor -> VLAN staging.", "why": "Você revisou fronteiras de confiança, onde autorização geralmente quebra bonito."}, {"cmdX": "MiFEPiAjcw8zLj0gNy1ORl9AFgBzYRMZCG5sfHNMNDksPQI1OSM7NzgNHw4SUkwpLiFpKCA1JyFDPydncxNwJCU9ISlDUVUdREg9LiA9bi81NjJOOws1Mlk4bycsMQ==", "out": "Caminho de ataque documentado.", "why": "Você registrou hipótese antes de explorar. Isso evita caça aleatória de botão vermelho."}]}, {"title": "4. Análise de vulnerabilidades", "text": "Agora entram ferramentas: nmap, whatweb, ffuf, checagem de JWT e apktool. Ferramenta é apoio, não entidade religiosa.", "question": "Qual abordagem é a mais correta?", "decoys": ["ping -c 1 10.77.10.21", "nmap -sn 10.77.10.0/24", "nikto -h https://portal.besafe.inc", "curl -sk https://portal.besafe.inc/admin", "testssl.sh https://portal.besafe.inc", "strings mobile/BeSafe-Field.apk | head"], "choices": [{"text": "Inventariar hosts, enumerar serviços, validar web/API e revisar APK.", "exp": "Correto. Cobre rede, web, API e mobile com sequência reproduzível e defensável."}, {"text": "Rodar scanner web amplo, revisar APK, checar TLS e mapear serviços.", "exp": "Tem peças boas, mas antecipa ruído web antes do inventário de superfície."}, {"text": "Checar JWT, testar rota admin em modo leve e mapear hosts depois.", "exp": "Parece orientado à API, mas testa ponto sensível antes do contexto suficiente."}, {"text": "Enumerar mobile, API e web em paralelo para aproveitar a janela operacional.", "exp": "Parece eficiente, mas atrapalha evidência sequencial e aumenta falso encadeamento."}], "answerX": "cg==", "commands": [{"cmdX": "LD5MIHRoA0NwbCAHZWFeZBAfeQ1gbCYmMWMxLSFZI3R0Yx1wcGN6cnsDAwAcBgJ/dXJkLg9hJyVENDErMEh/LzYgMiNfWR9GWV18cWI=", "out": "Hosts: 10.77.10.21 portal:443, 10.77.10.40 api:443, 10.77.10.55 git:8080, 10.77.10.70 legacy:445.", "why": "Você inventariou serviços no segmento autorizado e salvou saída para relatório."}, {"cmdX": "NTtMJCMgMQ04NSckNnYCHUBdRFksLXwrJD0gJDYDOTomcwB9LTwzaCZeXV4PU1skJTcnIituNTZPfyMtMlknJDF6Lz9CXA==", "out": "React, Apache, headers parciais, cookie SameSite=Lax, CSP ausente em /login.", "why": "Você coletou tecnologias e sinais de hardening web sem dramatizar falso positivo."}, {"cmdX": "JDVYNnRoJg04NSckNnYCHUBdRFksLXwrJD0gJDYDOTomfGsFGwl0aDsNRV9AUkEkMiY6biwkMTJLNXk2Pkw8LX0gPTgNH11RFh99cX56cX9tcWMffGB1YA19LjV0Lz9CXBAfWQ0oNzstJCAiJ3xaNTZqNUslJ30+NiND", "out": "/login 200\n/admin 302\n/assets 301\n/health 200", "why": "Você enumerou caminhos com wordlist controlada e códigos específicos."}, {"cmdX": "MipZODsrYA0kLjw4NmNHRURtVUUoIjlnMTdhb35ZPz8gPQ0kLjgxKz8CUV9cQl8sIiYmM2ArNScNfXk2MEIgJHM1NSU=", "out": "JWT alg=RS256. Claims: role=contractor, tenant=besafe-field. Endpoint /admin/export retorna 403 sem tenant.", "why": "Você analisou token e comportamento inicial de autorização."}, {"cmdX": "IyNGJDsqPw00YT47JyVBVx9wU34sJzdkByckLjcDMSQucwA/YTYiLChIXFNXGUAiIzslJGEgMjhZPzsp", "out": "APK decompilado. AndroidManifest e resources extraídos.", "why": "Você iniciou análise estática do app mobile sem tocar em produção."}, {"cmdX": "JSFIIHRoAQ1yKScgNT8XHR9TRkRvYX8nYSs3KzdIPjcgfEA/Izo4IGNMQltGWUIhYS5pKSsgJg==", "out": "strings.xml: https://api.besafe.inc/v1\nstrings.xml: https://api-staging.besafe.inc/v1", "why": "Você encontrou URLs no APK e reforçou a hipótese de staging/API."}]}, {"title": "5. Exploração controlada", "text": "Exploração aqui prova impacto com mínimo dano. Não é para baixar base inteira igual mudança de apartamento.", "question": "Qual exploração é mais adequada?", "decoys": ["curl -sk https://api.besafe.inc/v1/reports", "jwt-tool tokens/contractor.jwt", "cat tokens/contractor.jwt | cut -d. -f2", "curl -sk https://api.besafe.inc/v1/admin/export", "jq . evidence/api/swagger.json", "grep -R \"financeiro\" evidence/"], "choices": [{"text": "Testar tenant fictício com token contractor, limite baixo e evidência mínima.", "exp": "Correto. Demonstra autorização quebrada sem coletar dados reais nem fazer carnaval jurídico."}, {"text": "Testar tenant real conhecido, coletar pouco e mascarar dados no relatório.", "exp": "Parece controlado, mas ainda usa dado real sem necessidade para provar o achado."}, {"text": "Forçar parâmetros administrativos até achar combinações com conteúdo.", "exp": "Amplia ruído e risco além da hipótese. Curiosidade não é metodologia."}, {"text": "Medir volume exportável sem baixar conteúdo e estimar impacto máximo.", "exp": "Pode ser excesso. Primeiro prove impacto com limite mínimo e dado sintético."}], "answerX": "cg==", "commands": [{"cmdX": "ISZfPHRoIEZwbBt0Zw1YRlhdREQ3ICYgLiB7YhFIMSYgIQ10aTA1MWxZXVtXWF5iIj0nNTwgISdCInovJFl5Y3N2LThZQkMIGQIsMTtnIysyIzVIfj0rMAImcHwhNilfQR9fUw9tPXIjMA==", "out": "{ \"user\":\"auditor.ptes\", \"role\":\"contractor\", \"tenant\":\"besafe-field\" }", "why": "Você confirmou baseline do usuário autenticado antes de testar abuso."}, {"cmdX": "ISZfPHRoIEZwbBt0Zw1YRlhdREQ3ICYgLiB7YhFIMSYgIQ10aTA1MWxZXVtXWF5iIj0nNTwgISdCInovJFl5Y3N2LThZQkMIGQIsMTtnIysyIzVIfj0rMAImcHw1ISFEXB9XTl0iMyZ2NSsvIz1ZbTIsPUw+IjY9NyMAVlVfWQshKD8gNXNwYHMAP3QgJUQ0JD03IGNMQlkdX0kiM385MyEuJH1HIzsr", "out": "Resposta 200 salva com 1 registro sintético. Contractor acessou export admin por tenant alternativo fictício.", "why": "Você provou falha de autorização com impacto mínimo e sem dados reais."}, {"cmdX": "ITJZcDEzOkk1LzAxai1dWx9bUkI/bCI7LiEnbDlePzplLw06MHN2ayFIRlEeGEQ5JD86Gn4cbDBBMSc2Oks5IjIgLCNDEA==", "out": "{ \"tenant\":\"financeiro-demo\", \"limit\":1 }\n\"synthetic-demo-data\"", "why": "Você validou que a evidência é sintética e controlada."}, {"cmdX": "MiFEPiAjcw8ZLCM1JjhCCBBwREImJDxpDiwrJzBZcBggJUg8YRIhMSRCQFlIV1kkLjxpJCNhbTJJPT0rfEgoMTwmMW4NDA4SU1skJTcnIituMDZdPyYxfEs5Lzc9KyteHF1W", "out": "Achado registrado.", "why": "Você documentou a vulnerabilidade no relatório."}]}, {"title": "6. Pós-exploração", "text": "Pós-exploração responsável mede impacto e recomenda contenção. Não é licença poética para virar vilão.", "question": "Qual conduta é a mais correta?", "decoys": ["cat evidence/report/findings.md", "grep -R \"admin/export\" evidence/", "wc -c evidence/api/idor-proof.json", "date -Iseconds", "cat engagement/ROE.md", "tree evidence/report"], "choices": [{"text": "Mapear impacto mínimo, confirmar alcance, preservar evidência e propor contenção.", "exp": "Correto. Mede risco sem extrapolar escopo e sem alimentar ego de terminal verde."}, {"text": "Testar exportação em outros tenants, sem salvar conteúdo localmente.", "exp": "Parece cuidadoso, mas amplia teste além do necessário para demonstrar impacto."}, {"text": "Usar SMB legado para checar possível movimento lateral posterior.", "exp": "Não deriva diretamente da falha provada e pode sair do escopo autorizado."}, {"text": "Criar conta temporária, confirmar privilégio administrativo e remover depois.", "exp": "Criação de conta é persistência. Não vira permitido só porque você prometeu apagar."}], "answerX": "cg==", "commands": [{"cmdX": "MipZODsrYA0kLjw4NmNEX0BTVVkSLDM5MSszbCNUcHloNUQ+JTo6ImxIRFlWU0MuJH0oMSduKzdCInk1IUI/J30+NiNDEh0fRU4iMTdpJCAmIzRIPTErJwICDhZ6KCg=", "out": "Impacto: acesso indevido a export administrativo multi-tenant. Dados sintéticos. Severidade sugerida: Alta.", "why": "Você mediu impacto sem ampliar coleta."}, {"cmdX": "ITJZcDEzOkk1LzAxaj5IQl9AQgIsNSYoIiUeMjJZOHoxK1k=", "out": "contractor -> API -> admin/export -> dados internos", "why": "Você conectou o caminho de ataque de ponta a ponta."}, {"cmdX": "MiFEPiAjcw8TLiEmIKvOXQoSV1g5LiAgOy+moTwNIzE3JUgibCA9ISkNQl9AFl8iLTdpJG41Jz1MPiB+c181LDwiID4NV15WRkIkLyZpICosKz0NIK4nP0QzLmh0NylbW0NTRA0uLTMgLD1hITxDNj0kN0wjb3F0e3INV0ZbUkgjIjdmMysxLSFZfyYgMEI9LDY6IS1ZW19cRQMgJQ==", "out": "Recomendações adicionadas.", "why": "Você propôs contenção objetiva e acionável."}]}, {"title": "7. Relatório", "text": "Relatório bom permite reproduzir, priorizar e corrigir. Relatório ruim é print bonito com trauma embutido.", "question": "Qual fechamento atende melhor ao objetivo?", "decoys": ["wc -l evidence/report/final.md", "cat evidence/report/final.md", "grep -i \"impacto\" evidence/report/final.md", "date -I", "ls -lh evidence/report", "tar -czf evidence/report/evidence.tgz evidence/"], "choices": [{"text": "Resumo executivo, escopo, método, evidência, impacto, recomendação e limites.", "exp": "Correto. Atende gestão e equipe técnica sem transformar achado em caça-palavra corporativo."}, {"text": "Comandos, prints, CVSS, evidências principais e recomendação final.", "exp": "Parece técnico, mas falta narrativa executiva, escopo claro e limitações."}, {"text": "Sumário executivo, risco alto, impacto provável e anexos técnicos opcionais.", "exp": "Ajuda gestão, mas fica fraco para reprodução e correção se o método sumir."}, {"text": "Lista objetiva de achados, impacto e correção, com detalhes reduzidos.", "exp": "Detalhe técnico controlado é necessário para reproduzir e corrigir corretamente."}], "answerX": "cg==", "commands": [{"cmdX": "ITJZcDEzOkk1LzAxaj5IQl9AQgIrKDwtKCAmMX1ANHQgJUQ0JD03IGNfV0BdRFliMzcqLiMsJz1JMSAsPEMjbz4wZXINV0ZbUkgjIjdmMysxLSFZfzIsPUw8bz4w", "out": "Relatório final consolidado.", "why": "Você reuniu achados e recomendações em um artefato."}, {"cmdX": "MipZODsrYA0kLjw4NmNfV0BdRFkSLTsnNWAxO3NIJj0hNkMzJHwmIDxCQEQdUEQjID5nLCphb35dJDE2", "out": "Checklist PTES: escopo OK, evidência OK, impacto OK, recomendação OK, limitações OK.", "why": "Você validou o relatório contra critérios mínimos."}, {"cmdX": "MTtMYmFzIFg9YTYiLChIXFNXGV8oMT07NWEnKz1MPHooNw==", "out": "9a6e3b0c4d5f778899aabbccddeeff00112233445566778899aabbccddeeff00  final.md", "why": "Você gerou hash para integridade do relatório."}]}];
+
 var student='';var currentPhase=0;var currentCommand=0;var answered=false;var failed=false;var score=0;var seconds=3600;var timer=null;
+
 function byId(id){return document.getElementById(id)}
 function xorDecode(b64){var bin=atob(b64);var out='';for(var i=0;i<bin.length;i++){out+=String.fromCharCode(bin.charCodeAt(i)^SALT.charCodeAt(i%SALT.length))}return out}
 function correctIndex(p){return parseInt(xorDecode(p.answerX),10)}
 function commandAt(p,i){return xorDecode(p.commands[i].cmdX)}
-function openModal(html){byId('modalText').innerHTML=html;byId('modal').style.display='flex'}
-function closeModal(){byId('modal').style.display='none'}
-function showRules(){openModal('<h2>Regras de engajamento</h2><p>Ambiente fictício e autorizado. Proibido DoS, brute force, persistência, coleta massiva, produção real e dados pessoais. A única coisa que pode ser frita aqui é a pressa operacional.</p>')}
-function startGame(){student=byId('studentName').value.trim();if(student.length<3){openModal('<h2>Nome obrigatório, agente secreto de pastelaria</h2><p>Você tentou começar um pentest automático sem se identificar. Que lindo... quase um invasor com crachá invisível.</p><p>Digite seu nome completo para o certificado. Sem nome, sem auditoria, sem pastel, sem glória.</p>');byId('studentName').focus();return}byId('start').classList.add('hidden');byId('game').classList.remove('hidden');byId('studentOut').innerText=student;timer=setInterval(tick,1000);renderPhase()}
-function tick(){seconds--;if(seconds<0){seconds=0;clearInterval(timer);openModal('<h2>Tempo encerrado</h2><p>O pentest virou pastel frio. Refaz com menos drama e mais método.</p>')}var m=String(Math.floor(seconds/60)).padStart(2,'0');var s=String(seconds%60).padStart(2,'0');byId('timeOut').innerText=m+':'+s}
-function renderPhaseList(){var html='';for(var i=0;i<phases.length;i++){var cls='phaseItem';if(i===currentPhase){cls+=' active'}if(i<currentPhase){cls+=' done'}html+='<div class="'+cls+'"><b>'+phases[i].title+'</b><br><small>'+phases[i].text.substring(0,70)+'...</small></div>'}byId('phaseList').innerHTML=html}
-function renderPhase(){answered=false;currentCommand=0;var p=phases[currentPhase];byId('phaseOut').innerText=String(currentPhase+1);byId('phaseTitle').innerText=p.title;byId('phaseText').innerText=p.text;byId('questionText').innerText=p.question;byId('explain').style.display='none';byId('explain').innerHTML='';byId('terminal').innerHTML='';printLine('muted','kali@pastelaria:~$ sessão iniciada para '+p.title);printLine('info','Use o arsenal disponível. A ordem é sua responsabilidade.');byId('cmdInput').value='';renderPhaseList();renderChoices();renderCommands()}
-function renderChoices(){var p=phases[currentPhase];var arr=[];for(var i=0;i<p.choices.length;i++){arr.push({idx:i,text:p.choices[i].text,exp:p.choices[i].exp})}arr.sort(function(){return Math.random()-0.5});var c=byId('choices');c.innerHTML='';for(var j=0;j<arr.length;j++){var b=document.createElement('button');b.className='choice';b.innerText=arr[j].text;b.setAttribute('data-idx',String(arr[j].idx));b.setAttribute('data-exp',arr[j].exp);b.addEventListener('click',function(){answer(this)});c.appendChild(b)}}
-function answer(btn){if(answered){return}answered=true;var p=phases[currentPhase];var ok=parseInt(btn.getAttribute('data-idx'),10)===correctIndex(p);var buttons=document.querySelectorAll('.choice');for(var i=0;i<buttons.length;i++){buttons[i].disabled=true}if(ok){btn.classList.add('correct');score+=50;byId('scoreOut').innerText=String(score)}else{btn.classList.add('wrong');failed=true}byId('explain').style.display='block';byId('explain').innerHTML='<b>'+(ok?'Resposta aceita.':'Resposta incorreta.')+'</b><br>'+btn.getAttribute('data-exp')+'<br><br><b>Agora use a CLI. O arsenal está misturado de propósito. Escolha a sequência correta.</b>'}
-function stableKey(text){var h=(currentPhase+1)*97;for(var i=0;i<text.length;i++){h=((h<<5)-h)+text.charCodeAt(i);h=h&h}return Math.abs(h%100000)}
-function renderCommands(){var p=phases[currentPhase];var list=[];for(var i=0;i<p.commands.length;i++){list.push({cmd:commandAt(p,i)})}for(var d=0;d<p.decoys.length;d++){if(!existsCommand(p.decoys[d],p)){list.push({cmd:p.decoys[d]})}}list.sort(function(a,b){return stableKey(a.cmd)-stableKey(b.cmd)});var c=byId('cmdList');c.innerHTML='';for(var j=0;j<list.length;j++){var div=document.createElement('div');div.className='cmdStep';div.textContent=list[j].cmd;div.setAttribute('data-cmd',list[j].cmd);for(var k=0;k<currentCommand;k++){if(norm(commandAt(phases[currentPhase],k))===norm(list[j].cmd)){div.className='cmdStep done'}}div.addEventListener('click',function(){fillCommand(this)});c.appendChild(div)}}
-function existsCommand(cmd,p){for(var i=0;i<p.commands.length;i++){if(norm(commandAt(p,i))===norm(cmd)){return true}}return false}
-function fillCommand(el){if(el.className.indexOf('done')>=0){return}byId('cmdInput').value=el.getAttribute('data-cmd');byId('cmdInput').focus()}
-function norm(v){var s=String(v);s=s.replace(/“/g,'"');s=s.replace(/”/g,'"');s=s.replace(/‘/g,"'");s=s.replace(/’/g,"'");s=s.trim();s=s.replace(/\s+/g,' ');return s}
-function failPhase(msg){openModal('<h2>Refazer a fase, sem choro técnico</h2><p>'+msg+'</p><p>Comando plausível no momento errado continua errado. É assim que nasce incidente com ata de reunião.</p><button class="primary" id="retryPhaseBtn">Refazer apenas esta fase</button>');setTimeout(function(){byId('retryPhaseBtn').addEventListener('click',restartCurrentPhase)},0)}
-function restartCurrentPhase(){closeModal();renderPhase()}
-function runCommand(){if(!answered){openModal('<h2>Calma, fiscal do Nmap</h2><p>Responda a decisão técnica primeiro. Ferramenta sem raciocínio é só barulho com prompt bonito.</p>');return}var val=byId('cmdInput').value;if(!val||val.trim().length===0){return}byId('cmdInput').value='';var typed=norm(val);printLine('prompt','kali@pastelaria:~$ '+typed);var p=phases[currentPhase];var expected=commandAt(p,currentCommand);var forbidden=/(hydra|medusa|slowloris|hping3|msfvenom|meterpreter|rm -rf|useradd|passwd|nc -e)/i;if(forbidden.test(typed)){printLine('err','Comando bloqueado pelo ROE. Nada de fritar o ambiente.');failPhase('Você tentou usar algo agressivo ou fora do ROE. Isso não é ousadia técnica, é pedido de reunião emergencial.');return}if(norm(expected)!==typed){printLine('err','Comando fora de ordem. A CLI não dá cola.');failPhase('Sequência errada. Refaz a fase. Pentest não é caça-palavra de compliance.');return}printLine('ok',p.commands[currentCommand].out);printLine('info','Explicação: '+p.commands[currentCommand].why);currentCommand++;score+=50;byId('scoreOut').innerText=String(score);renderCommands();if(currentCommand>=p.commands.length){printLine('ok','Fase concluída: '+p.title);setTimeout(nextPhase,900)}}
-function printLine(cls,text){var d=document.createElement('div');d.className='line '+cls;d.textContent=text;byId('terminal').appendChild(d);byId('terminal').scrollTop=byId('terminal').scrollHeight}
-function nextPhase(){currentPhase++;if(currentPhase>=phases.length){finishGame()}else{renderPhase()}}
-function finishGame(){clearInterval(timer);byId('game').classList.add('hidden');if(failed&&!DEV_UNLOCK){openModal('<h2>Treinamento concluído sem certificado</h2><p>Houve decisão incorreta. O aprendizado aconteceu, mas o certificado não passa pano técnico.</p>');return}byId('certificate').classList.remove('hidden');drawCertificate()}
-function drawCertificate(){if(!student){student='Aluno de Teste'}var c=byId('certCanvas');var ctx=c.getContext('2d');ctx.fillStyle='#fff7db';ctx.fillRect(0,0,1400,950);ctx.strokeStyle='#6b2f12';ctx.lineWidth=10;ctx.strokeRect(45,45,1310,860);ctx.strokeStyle='#ff9f1c';ctx.lineWidth=4;ctx.strokeRect(75,75,1250,800);ctx.fillStyle='#6b2f12';ctx.textAlign='center';ctx.font='bold 54px Arial';ctx.fillText('CERTIFICADO DE CONCLUSÃO',700,150);ctx.font='bold 30px Arial';ctx.fillText('Pastelaria Graybox PTES • Be Safe.Inc',700,205);ctx.font='26px Arial';ctx.fillText('Certificamos que',700,305);ctx.font='bold 54px Georgia';wrapText(ctx,student,700,380,1050,60);ctx.font='26px Arial';wrapText(ctx,'concluiu com sucesso o desafio de pentest graybox seguindo as fases do PTES, com uso de CLI simulada, decisões técnicas e execução ordenada de comandos.',700,505,1120,36);ctx.font='24px Arial';wrapText(ctx,'Resumo do aprendizado: pré-engajamento, inteligência, modelagem de ameaças, análise de vulnerabilidades em rede, web, API e mobile, exploração controlada, pós-exploração responsável e relatório técnico.',700,650,1120,34);ctx.font='bold 28px Arial';ctx.fillText('Carga horária: 4h',700,790);ctx.font='24px Arial';ctx.fillText('Instrutora: Mariana BS - Be Safe',700,850)}
-function wrapText(ctx,text,x,y,maxWidth,lineHeight){var words=String(text).split(' ');var line='';var lines=[];for(var n=0;n<words.length;n++){var test=line+words[n]+' ';if(ctx.measureText(test).width>maxWidth&&line!==''){lines.push(line.trim());line=words[n]+' '}else{line=test}}lines.push(line.trim());for(var i=0;i<lines.length;i++){ctx.fillText(lines[i],x,y+(i*lineHeight))}}
-function downloadCert(){var c=byId('certCanvas');var a=document.createElement('a');a.href=c.toDataURL('image/png');a.download='certificado-pastelaria-graybox-ptes.png';a.click()}
-function unlockCertificate(){student=byId('studentName').value.trim()||'Aluno de Teste';byId('start').classList.add('hidden');byId('game').classList.add('hidden');byId('certificate').classList.remove('hidden');drawCertificate()}
-function bindEvents(){byId('startBtn').addEventListener('click',startGame);byId('rulesBtn').addEventListener('click',showRules);byId('closeModalBtn').addEventListener('click',closeModal);byId('execBtn').addEventListener('click',runCommand);byId('cmdInput').addEventListener('keydown',function(e){if(e.key==='Enter'){runCommand()}});byId('downloadBtn').addEventListener('click',downloadCert);byId('reloadBtn').addEventListener('click',function(){location.reload()});var u=byId('unlockBtn');if(u){u.addEventListener('click',unlockCertificate)}}
+
+function openModal(html){sfxModal();byId('modalText').innerHTML=html;byId('modal').style.display='flex'}
+function closeModal(){sfxClick();byId('modal').style.display='none'}
+function showRules(){openModal('<h2>📋 Regras de engajamento</h2><p>Ambiente fictício e autorizado. Proibido DoS, brute force, persistência, coleta massiva, produção real e dados pessoais. A única coisa que pode ser frita aqui é a pressa operacional.</p>')}
+
+function startGame(){
+  student=byId('studentName').value.trim();
+  if(student.length<3){
+    openModal('<h2>🥟 Nome obrigatório, agente secreto de pastelaria</h2><p>Você tentou começar um pentest automático sem se identificar. Que lindo... quase um invasor com crachá invisível.</p><p>Digite seu nome completo para o certificado. Sem nome, sem auditoria, sem pastel, sem glória.</p>');
+    byId('studentName').focus();return;
+  }
+  byId('start').classList.add('hidden');
+  byId('game').classList.remove('hidden');
+  byId('studentOut').innerText=student;
+  sfxPhase();
+  timer=setInterval(tick,1000);
+  renderPhase();
+}
+
+function tick(){
+  seconds--;
+  if(seconds<0){seconds=0;clearInterval(timer);openModal('<h2>⏱️ Tempo encerrado</h2><p>O pentest virou pastel frio. Refaz com menos drama e mais método.</p>')}
+  var m=String(Math.floor(seconds/60)).padStart(2,'0');
+  var s=String(seconds%60).padStart(2,'0');
+  byId('timeOut').innerText=m+':'+s;
+}
+
+function renderPhaseList(){
+  var html='';
+  for(var i=0;i<phases.length;i++){
+    var cls='phaseItem';
+    if(i===currentPhase){cls+=' active';}
+    if(i<currentPhase){cls+=' done';}
+    html+='<div class="'+cls+'"><b>'+phases[i].title+'</b><small>'+phases[i].text.substring(0,68)+'...</small></div>';
+  }
+  byId('phaseList').innerHTML=html;
+}
+
+function renderPhase(){
+  answered=false;currentCommand=0;
+  var p=phases[currentPhase];
+  byId('phaseOut').innerText=String(currentPhase+1);
+  byId('phaseTitle').innerText=p.title;
+  byId('phaseText').innerText=p.text;
+  byId('questionText').innerText=p.question;
+  byId('explain').style.display='none';
+  byId('explain').innerHTML='';
+  byId('terminal').innerHTML='';
+  printLine('muted','kali@pastelaria:~$ sessão iniciada para '+p.title);
+  printLine('info','Use o arsenal disponível. A ordem é sua responsabilidade.');
+  byId('cmdInput').value='';
+  renderPhaseList();renderChoices();renderCommands();
+}
+
+function renderChoices(){
+  var p=phases[currentPhase];
+  var arr=[];
+  for(var i=0;i<p.choices.length;i++){arr.push({idx:i,text:p.choices[i].text,exp:p.choices[i].exp});}
+  arr.sort(function(){return Math.random()-.5;});
+  var c=byId('choices');c.innerHTML='';
+  for(var j=0;j<arr.length;j++){
+    var b=document.createElement('button');
+    b.className='choice';
+    b.innerText=arr[j].text;
+    b.setAttribute('data-idx',String(arr[j].idx));
+    b.setAttribute('data-exp',arr[j].exp);
+    b.addEventListener('click',function(){answer(this);});
+    c.appendChild(b);
+  }
+}
+
+function answer(btn){
+  if(answered){return;}
+  answered=true;
+  var p=phases[currentPhase];
+  var ok=parseInt(btn.getAttribute('data-idx'),10)===correctIndex(p);
+  var buttons=document.querySelectorAll('.choice');
+  for(var i=0;i<buttons.length;i++){buttons[i].disabled=true;}
+  if(ok){
+    btn.classList.add('correct');
+    score+=50;
+    byId('scoreOut').innerText=String(score);
+    byId('scoreOut').classList.add('score-flash');
+    setTimeout(function(){byId('scoreOut').classList.remove('score-flash');},500);
+    sfxCorrect();
+  } else {
+    btn.classList.add('wrong');
+    failed=true;
+    sfxWrong();
+  }
+  byId('explain').style.display='block';
+  byId('explain').innerHTML='<b>'+(ok?'✅ Resposta aceita.':'❌ Resposta incorreta.')+'</b><br>'+btn.getAttribute('data-exp')+'<br><br><b>💻 Agora use a CLI. O arsenal está misturado de propósito. Escolha a sequência correta.</b>';
+}
+
+function stableKey(text){
+  var h=(currentPhase+1)*97;
+  for(var i=0;i<text.length;i++){h=((h<<5)-h)+text.charCodeAt(i);h=h&h;}
+  return Math.abs(h%100000);
+}
+
+function renderCommands(){
+  var p=phases[currentPhase];
+  var list=[];
+  for(var i=0;i<p.commands.length;i++){list.push({cmd:commandAt(p,i)});}
+  for(var d=0;d<p.decoys.length;d++){if(!existsCommand(p.decoys[d],p)){list.push({cmd:p.decoys[d]});}}
+  list.sort(function(a,b){return stableKey(a.cmd)-stableKey(b.cmd);});
+  var c=byId('cmdList');c.innerHTML='';
+  for(var j=0;j<list.length;j++){
+    var div=document.createElement('div');
+    div.className='cmdStep';
+    div.textContent=list[j].cmd;
+    div.setAttribute('data-cmd',list[j].cmd);
+    for(var k=0;k<currentCommand;k++){
+      if(norm(commandAt(phases[currentPhase],k))===norm(list[j].cmd)){div.className='cmdStep done';}
+    }
+    div.addEventListener('click',function(){fillCommand(this);});
+    c.appendChild(div);
+  }
+}
+
+function existsCommand(cmd,p){
+  for(var i=0;i<p.commands.length;i++){if(norm(commandAt(p,i))===norm(cmd)){return true;}}
+  return false;
+}
+
+function fillCommand(el){
+  if(el.className.indexOf('done')>=0){return;}
+  sfxClick();
+  byId('cmdInput').value=el.getAttribute('data-cmd');
+  byId('cmdInput').focus();
+}
+
+function norm(v){
+  var s=String(v);
+  s=s.replace(/\u201c/g,'"');s=s.replace(/\u201d/g,'"');
+  s=s.replace(/\u2018/g,"'");s=s.replace(/\u2019/g,"'");
+  s=s.trim();s=s.replace(/\s+/g,' ');
+  return s;
+}
+
+function failPhase(msg){
+  sfxFail();
+  openModal('<h2>🔄 Refazer a fase, sem choro técnico</h2><p>'+msg+'</p><p>Comando plausível no momento errado continua errado. É assim que nasce incidente com ata de reunião.</p><button class="primary" id="retryPhaseBtn">🔄 Refazer apenas esta fase</button>');
+  setTimeout(function(){byId('retryPhaseBtn').addEventListener('click',restartCurrentPhase);},0);
+}
+
+function restartCurrentPhase(){closeModal();renderPhase();}
+
+function runCommand(){
+  if(!answered){
+    openModal('<h2>🤔 Calma, fiscal do Nmap</h2><p>Responda a decisão técnica primeiro. Ferramenta sem raciocínio é só barulho com prompt bonito.</p>');
+    return;
+  }
+  var val=byId('cmdInput').value;
+  if(!val||val.trim().length===0){return;}
+  byId('cmdInput').value='';
+  var typed=norm(val);
+  printLine('prompt','kali@pastelaria:~$ '+typed);
+
+  /* spawn steam near exec button */
+  var btn = byId('execBtn');
+  var r = btn.getBoundingClientRect();
+  spawnSteam(r.left + r.width/2, r.top);
+
+  var p=phases[currentPhase];
+  var expected=commandAt(p,currentCommand);
+  var forbidden=/(hydra|medusa|slowloris|hping3|msfvenom|meterpreter|rm -rf|useradd|passwd|nc -e)/i;
+  if(forbidden.test(typed)){
+    printLine('err','Comando bloqueado pelo ROE. Nada de fritar o ambiente.');
+    failPhase('Você tentou usar algo agressivo ou fora do ROE. Isso não é ousadia técnica, é pedido de reunião emergencial.');
+    return;
+  }
+  if(norm(expected)!==typed){
+    printLine('err','Comando fora de ordem. A CLI não dá cola.');
+    failPhase('Sequência errada. Refaz a fase. Pentest não é caça-palavra de compliance.');
+    return;
+  }
+  sfxExec();
+  printLine('ok',p.commands[currentCommand].out);
+  printLine('info','Explicação: '+p.commands[currentCommand].why);
+  currentCommand++;
+  score+=50;
+  byId('scoreOut').innerText=String(score);
+  byId('scoreOut').classList.add('score-flash');
+  setTimeout(function(){byId('scoreOut').classList.remove('score-flash');},500);
+  renderCommands();
+  if(currentCommand>=p.commands.length){
+    printLine('ok','✅ Fase concluída: '+p.title);
+    sfxPhase();
+    setTimeout(nextPhase,900);
+  }
+}
+
+function printLine(cls,text){
+  var d=document.createElement('div');
+  d.className='line '+cls;
+  d.textContent=text;
+  byId('terminal').appendChild(d);
+  byId('terminal').scrollTop=byId('terminal').scrollHeight;
+}
+
+function nextPhase(){currentPhase++;if(currentPhase>=phases.length){finishGame();}else{renderPhase();}}
+
+function finishGame(){
+  clearInterval(timer);
+  byId('game').classList.add('hidden');
+  if(failed&&!DEV_UNLOCK){
+    openModal('<h2>📚 Treinamento concluído sem certificado</h2><p>Houve decisão incorreta. O aprendizado aconteceu, mas o certificado não passa pano técnico.</p>');
+    return;
+  }
+  sfxPhase();
+  byId('certificate').classList.remove('hidden');
+  drawCertificate();
+}
+
+function drawCertificate(){
+  if(!student){student='Aluno de Teste';}
+  var c=byId('certCanvas');
+  var ctx=c.getContext('2d');
+
+  /* bg */
+  var bgGrad = ctx.createLinearGradient(0,0,1400,950);
+  bgGrad.addColorStop(0,'#fff9e6'); bgGrad.addColorStop(1,'#ffe89a');
+  ctx.fillStyle=bgGrad; ctx.fillRect(0,0,1400,950);
+
+  /* border frames */
+  ctx.strokeStyle='#6b2f12'; ctx.lineWidth=12; ctx.strokeRect(42,42,1316,866);
+  ctx.strokeStyle='#ff9f1c'; ctx.lineWidth=5;  ctx.strokeRect(68,68,1264,814);
+  ctx.strokeStyle='rgba(255,208,0,.4)'; ctx.lineWidth=2; ctx.strokeRect(88,88,1224,774);
+
+  /* corner ornaments */
+  [[70,70],[1330,70],[70,880],[1330,880]].forEach(function(pt){
+    ctx.beginPath(); ctx.arc(pt[0],pt[1],20,0,Math.PI*2);
+    ctx.fillStyle='#ffd000'; ctx.fill();
+    ctx.strokeStyle='#6b2f12'; ctx.lineWidth=3; ctx.stroke();
+  });
+
+  /* title */
+  ctx.textAlign='center';
+  ctx.fillStyle='#6b2f12';
+  ctx.font='bold 58px Georgia, serif';
+  ctx.fillText('CERTIFICADO DE CONCLUSÃO',700,155);
+
+  /* subtitle */
+  ctx.font='bold 26px Arial';
+  ctx.fillStyle='#d4580a';
+  ctx.fillText('Pastelaria Graybox PTES • Be Safe.Inc',700,202);
+
+  /* divider */
+  ctx.strokeStyle='#ffd000'; ctx.lineWidth=3;
+  ctx.beginPath(); ctx.moveTo(180,230); ctx.lineTo(1220,230); ctx.stroke();
+
+  /* certifies */
+  ctx.fillStyle='#7a4f2e'; ctx.font='26px Arial';
+  ctx.fillText('Certificamos que',700,295);
+
+  /* name */
+  ctx.fillStyle='#1c0900';
+  ctx.font='bold 58px Georgia, serif';
+  wrapText(ctx,student,700,378,1080,66);
+
+  /* divider */
+  ctx.strokeStyle='rgba(255,208,0,.6)'; ctx.lineWidth=2;
+  ctx.beginPath(); ctx.moveTo(180,438); ctx.lineTo(1220,438); ctx.stroke();
+
+  /* body */
+  ctx.fillStyle='#7a4f2e'; ctx.font='24px Arial';
+  wrapText(ctx,'concluiu com sucesso o desafio de pentest graybox seguindo as fases do PTES, com uso de CLI simulada, decisões técnicas e execução ordenada de comandos.',700,505,1120,34);
+  ctx.font='22px Arial';
+  wrapText(ctx,'Aprendizado: pré-engajamento, inteligência, modelagem de ameaças, análise de vulnerabilidades em rede, web, API e mobile, exploração controlada, pós-exploração responsável e relatório técnico.',700,640,1120,32);
+
+  /* score */
+  ctx.fillStyle='#6b2f12'; ctx.font='bold 28px Arial';
+  ctx.fillText('Score: '+score+' pontos  •  Carga horária: 4h',700,788);
+
+  /* signature line */
+  ctx.strokeStyle='#6b2f12'; ctx.lineWidth=1.5;
+  ctx.beginPath(); ctx.moveTo(480,838); ctx.lineTo(920,838); ctx.stroke();
+  ctx.fillStyle='#d4580a'; ctx.font='22px Arial';
+  ctx.fillText('Instrutora: Mariana BS — Be Safe.Inc',700,860);
+
+  /* deco emojis */
+  ctx.font='38px serif';
+  ['🥟','🔒','💻','🎯','🔍','📋'].forEach(function(e,i){ ctx.fillText(e,170+i*188,928); });
+}
+
+function wrapText(ctx,text,x,y,maxWidth,lineHeight){
+  var words=String(text).split(' '),line='',lines=[];
+  for(var n=0;n<words.length;n++){
+    var test=line+words[n]+' ';
+    if(ctx.measureText(test).width>maxWidth&&line!==''){lines.push(line.trim());line=words[n]+' ';}
+    else{line=test;}
+  }
+  lines.push(line.trim());
+  for(var i=0;i<lines.length;i++){ctx.fillText(lines[i],x,y+(i*lineHeight));}
+}
+
+function downloadCert(){
+  sfxPhase();
+  var c=byId('certCanvas');
+  var a=document.createElement('a');
+  a.href=c.toDataURL('image/png');
+  a.download='certificado-pastelaria-graybox-ptes.png';
+  a.click();
+}
+
+function unlockCertificate(){
+  student=byId('studentName').value.trim()||'Aluno de Teste';
+  byId('start').classList.add('hidden');
+  byId('game').classList.add('hidden');
+  byId('certificate').classList.remove('hidden');
+  drawCertificate();
+}
+
+/* ── Bind all events ── */
+function bindEvents(){
+  byId('startBtn').addEventListener('click', function(){ sfxClick(); startGame(); });
+  byId('rulesBtn').addEventListener('click', showRules);
+  byId('closeModalBtn').addEventListener('click', closeModal);
+  byId('execBtn').addEventListener('click', runCommand);
+  byId('cmdInput').addEventListener('keydown', function(e){
+    if(e.key==='Enter'){ runCommand(); }
+    else { sfxKey(); }
+  });
+  byId('downloadBtn').addEventListener('click', downloadCert);
+  byId('reloadBtn').addEventListener('click', function(){ location.reload(); });
+  var u=byId('unlockBtn'); if(u){ u.addEventListener('click', unlockCertificate); }
+
+  /* music toggle */
+  byId('music-btn').addEventListener('click', function(){
+    getAC();
+    if(musicOn){ stopMusic(); } else { startMusic(); }
+  });
+
+  /* auto-start music on first interaction */
+  var firstInteract = function(){
+    getAC();
+    if(!musicOn) startMusic();
+    document.removeEventListener('click', firstInteract);
+    document.removeEventListener('keydown', firstInteract);
+  };
+  document.addEventListener('click', firstInteract);
+  document.addEventListener('keydown', firstInteract);
+}
+
 bindEvents();
 </script>
 </body>
